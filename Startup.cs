@@ -56,6 +56,11 @@ namespace ColaboradoresAPI
 
             app.UseHttpsRedirection();
 
+            app.UseCors(op => 
+                op.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+
             app.UseRouting();
 
             app.UseAuthorization();

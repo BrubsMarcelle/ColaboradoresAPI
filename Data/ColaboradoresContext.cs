@@ -10,7 +10,7 @@ namespace ColaboradoresAPI.Data
     {
         public ColaboradoresContext(DbContextOptions<ColaboradoresContext> options) : base(options) { }
 
-        public DbSet<ColaboradoresModel> colaboradores { get; set; }
+        public DbSet<ColaboradoresModel> COLABORADORES { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
