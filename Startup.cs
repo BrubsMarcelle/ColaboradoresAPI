@@ -1,4 +1,5 @@
 using ColaboradoresAPI.Data;
+using ColaboradoresAPI.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -38,6 +39,8 @@ namespace ColaboradoresAPI
                 .AddJsonOptions(op => {
                     op.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
+            services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ColaboradoresAPI", Version = "v1" });
